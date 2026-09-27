@@ -515,7 +515,7 @@ select:valid {
 input:invalid,
 select:invalid {
     border: 2px solid #C62828;
-    background-color: #ff0000;
+    background-color: #FFF0F0;
 }
 /* =========================================================
    FEEDBACK: BADGES, ALERTA, TOAST E MODAL
