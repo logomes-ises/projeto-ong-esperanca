@@ -64,16 +64,19 @@ export function validarCampo(campo) {
     if (!mensagem) {
         mensagem = document.createElement("span");
         mensagem.className = "mensagem-erro";
+        mensagem.setAttribute("role", "alert");
         campo.insertAdjacentElement("afterend", mensagem);
     }
 
     if (campo.validity.valid) {
-        campo.classList.remove("campo-invalido");
-        campo.classList.add("campo-valido");
-        mensagem.textContent = "";
+    campo.classList.remove("campo-invalido");
+    campo.classList.add("campo-valido");
+    campo.setAttribute("aria-invalid", "false");
+    mensagem.textContent = "";
     } else {
         campo.classList.remove("campo-valido");
         campo.classList.add("campo-invalido");
+        campo.setAttribute("aria-invalid", "true");
 
         if (campo.validity.valueMissing) {
             mensagem.textContent = "Este campo é obrigatório.";
