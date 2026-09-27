@@ -1,0 +1,611 @@
+/* =========================================================
+   ONG ESPERANÇA - DESIGN SYSTEM E ESTILOS
+   Atividade Prática 2 - CSS3
+   ========================================================= */
+
+:root {
+    /* Cores primárias */
+    --cor-primaria: #1B5E20;
+    --cor-primaria-escura: #104515;
+    --cor-primaria-clara: #4CAF50;
+
+    /* Cores secundárias */
+    --cor-secundaria: #2E7D32;
+    --cor-destaque: #81C784;
+
+    /* Tons neutros */
+    --cor-fundo: #F5F7F5;
+    --cor-superficie: #FFFFFF;
+    --cor-texto: #212121;
+    --cor-texto-suave: #555555;
+    --cor-borda: #D6DAD6;
+
+    /* Estados */
+    --cor-foco: #0D47A1;
+    --cor-sucesso: #2E7D32;
+
+    /* Tipografia - 5 níveis */
+    --fonte-base: Arial, Helvetica, sans-serif;
+    --tam-xs: 0.875rem;
+    --tam-sm: 1rem;
+    --tam-md: 1.25rem;
+    --tam-lg: 1.75rem;
+    --tam-xl: 2.25rem;
+
+    /* Espaçamento modular - escala baseada em 8px */
+    --esp-1: 0.5rem;
+    --esp-2: 1rem;
+    --esp-3: 1.5rem;
+    --esp-4: 2rem;
+    --esp-5: 2.5rem;
+    --esp-6: 3rem;
+
+    /* Layout */
+    --largura-maxima: 1200px;
+    --raio: 8px;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* ==================== BASE ==================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-base);
+    font-size: var(--tam-sm);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--cor-primaria-escura);
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Foco visível para teclado e acessibilidade */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+/* ==================== CABEÇALHO ==================== */
+
+header {
+    background: var(--cor-primaria);
+    color: var(--cor-superficie);
+    padding: var(--esp-3) var(--esp-2);
+}
+
+header h1 {
+    max-width: var(--largura-maxima);
+    margin: 0 auto var(--esp-2);
+    color: var(--cor-superficie);
+    font-size: var(--tam-xl);
+    line-height: 1.2;
+}
+
+nav {
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-2);
+}
+
+nav a {
+    color: var(--cor-superficie);
+    text-decoration: none;
+    padding: var(--esp-1) var(--esp-2);
+    border-radius: var(--raio);
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: var(--cor-primaria-escura);
+}
+
+/* ==================== LAYOUT PRINCIPAL ==================== */
+
+main {
+    width: min(100% - 2rem, var(--largura-maxima));
+    margin: var(--esp-4) auto;
+}
+
+#app {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--esp-3);
+}
+
+main section {
+    grid-column: 1 / -1;
+    background: var(--cor-superficie);
+    padding: var(--esp-3);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+/* ==================== TIPOGRAFIA ==================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.25;
+    color: var(--cor-primaria-escura);
+}
+
+h1 {
+    font-size: var(--tam-xl);
+}
+
+h2 {
+    font-size: var(--tam-lg);
+    margin-top: 0;
+}
+
+h3 {
+    font-size: var(--tam-md);
+}
+
+h4 {
+    font-size: var(--tam-sm);
+}
+
+h5 {
+    font-size: var(--tam-xs);
+}
+
+p {
+    margin-top: 0;
+}
+
+/* ==================== IMAGENS ==================== */
+
+main img {
+    width: 100%;
+    max-width: 720px;
+    margin: var(--esp-2) auto 0;
+    border-radius: var(--raio);
+}
+
+/* ==================== ARTIGOS E LISTAS ==================== */
+
+article {
+    padding: var(--esp-2);
+    border-left: 4px solid var(--cor-primaria-clara);
+    background: var(--cor-fundo);
+    border-radius: 0 var(--raio) var(--raio) 0;
+}
+
+ul {
+    padding-left: var(--esp-3);
+}
+
+/* ==================== FORMULÁRIO ==================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-3);
+}
+
+fieldset {
+    min-width: 0;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: var(--esp-3);
+}
+
+legend {
+    padding: 0 var(--esp-1);
+    color: var(--cor-primaria-escura);
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-top: var(--esp-2);
+    margin-bottom: var(--esp-1);
+    font-weight: 700;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.75rem;
+    border: 1px solid #888888;
+    border-radius: var(--raio);
+    font: inherit;
+}
+
+input,
+select {
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+button {
+    background: var(--cor-primaria);
+    color: var(--cor-superficie);
+    border: 2px solid var(--cor-primaria);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--cor-primaria-escura);
+    border-color: var(--cor-primaria-escura);
+}
+
+/* ==================== RODAPÉ ==================== */
+
+footer {
+    margin-top: var(--esp-6);
+    padding: var(--esp-3);
+    background: var(--cor-primaria-escura);
+    color: var(--cor-superficie);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==================== TABLET ==================== */
+
+@media (min-width: 768px) {
+    header {
+        padding: var(--esp-4) var(--esp-3);
+    }
+
+    main {
+    width: min(100% - 3rem, var(--largura-maxima));
+}
+
+#app {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+main section {
+    grid-column: span 6;
+}
+
+    main section {
+        grid-column: span 6;
+    }
+
+    main section:first-child,
+    main section:last-child {
+        grid-column: 1 / -1;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--esp-3);
+    }
+
+    fieldset {
+        grid-column: span 2;
+    }
+
+    form > button {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==================== DESKTOP ==================== */
+
+@media (min-width: 1024px) {
+    #app {
+    gap: var(--esp-4);
+}
+
+    main section {
+        grid-column: span 4;
+    }
+
+    main section:first-child,
+    main section:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==================== TELAS PEQUENAS ==================== */
+
+@media (max-width: 480px) {
+    header h1,
+    h1 {
+        font-size: var(--tam-lg);
+    }
+
+    h2 {
+        font-size: var(--tam-md);
+    }
+
+    main {
+        width: min(100% - 1rem, var(--largura-maxima));
+        margin-top: var(--esp-2);
+    }
+
+    main section {
+        padding: var(--esp-2);
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        text-align: center;
+    }
+}
+@media (min-width: 600px) {
+    nav {
+        flex-direction: row;
+    }
+
+    main section {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        gap: var(--esp-5);
+    }
+
+    main section {
+        padding: var(--esp-4);
+    }
+}
+/* =========================================================
+   MENU DROPDOWN E MENU HAMBÚRGUER
+   ========================================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-2);
+}
+
+.menu-toggle {
+    display: none;
+    width: 48px;
+    min-height: 48px;
+    padding: 0.5rem;
+    background: transparent;
+    color: var(--cor-superficie);
+    border: 2px solid var(--cor-superficie);
+    border-radius: var(--raio);
+    font-size: 1.5rem;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: var(--esp-1);
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    color: var(--cor-texto);
+    padding: var(--esp-1) var(--esp-2);
+}
+
+/* Mostra o submenu ao passar o mouse */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* =========================================================
+   MENU HAMBÚRGUER EM TELAS PEQUENAS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: var(--esp-2);
+    }
+
+    .menu:hover .menu-links,
+    .menu:focus-within .menu-links {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+/* Estados interativos dos botões */
+button {
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background: #BDBDBD;
+    border-color: #BDBDBD;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+/* ==================== VALIDAÇÃO VISUAL ==================== */
+
+input:valid,
+select:valid {
+    border: 2px solid #2E7D32;
+    background-color: #E8F5E9;
+}
+
+input:invalid,
+select:invalid {
+    border: 2px solid #C62828;
+    background-color: #ff0000;
+}
+/* =========================================================
+   FEEDBACK: BADGES, ALERTA, TOAST E MODAL
+   ========================================================= */
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 999px;
+    font-size: var(--tam-xs);
+    font-weight: 700;
+}
+
+.badge-ativo {
+    background: var(--cor-primaria-clara);
+    color: #104515;
+}
+
+.badge-voluntario {
+    background: var(--cor-destaque);
+    color: #212121;
+}
+
+.badge-doacao {
+    background: var(--cor-secundaria);
+    color: var(--cor-superficie);
+}
+
+/* Alerta */
+.alert {
+    padding: var(--esp-2);
+    border-radius: var(--raio);
+    border: 1px solid;
+    margin-bottom: var(--esp-3);
+}
+
+.alert-sucesso {
+    background: #E8F5E9;
+    color: #1B5E20;
+    border-color: var(--cor-sucesso);
+}
+
+/* Toast */
+.toast {
+    padding: var(--esp-2);
+    background: var(--cor-primaria-escura);
+    color: var(--cor-superficie);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    margin-bottom: var(--esp-3);
+}
+
+/* Modal */
+.modal-exemplo {
+    padding: var(--esp-3);
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: var(--raio);
+}
+
+.modal-conteudo {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--esp-3);
+    background: var(--cor-superficie);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.modal-conteudo h4 {
+    margin-top: 0;
+}
+/* Validação do formulário */
+.campo-invalido {
+    border: 2px solid #d32f2f;
+    background-color: #fff0f0;
+}
+
+.campo-valido {
+    border: 2px solid #2e7d32;
+    background-color: #f0fff0;
+}
+
+.mensagem-erro {
+    display: block;
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+#app {
+    width: 100%;
+}
