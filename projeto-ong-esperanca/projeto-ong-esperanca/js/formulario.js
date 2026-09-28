@@ -57,14 +57,11 @@ export function configurarFormulario() {
 }
 
 export function validarCampo(campo) {
-    let mensagem = campo.parentElement.querySelector(
-        ".mensagem-erro"
-    );
+    let mensagem = campo.nextElementSibling;
 
-    if (!mensagem) {
+    if (!mensagem || !mensagem.classList.contains("mensagem-erro")) {
         mensagem = document.createElement("span");
         mensagem.className = "mensagem-erro";
-        mensagem.setAttribute("role", "alert");
         campo.insertAdjacentElement("afterend", mensagem);
     }
 

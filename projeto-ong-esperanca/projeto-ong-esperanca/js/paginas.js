@@ -8,7 +8,7 @@ export const paginas = {
                 situação de vulnerabilidade.
             </p>
             <img
-                src="../imagens/ong.jpg"
+                src="/ong.webp"
                 alt="Voluntários da ONG participando de uma ação social"
             >
         </section>
@@ -81,7 +81,7 @@ export const paginas = {
                     e colaborar diretamente com os projetos da ONG.
                 </p>
                 <img
-                    src="../imagens/voluntariado.jpg"
+                    src="/voluntariado.webp"
                     alt="Voluntários participando de uma ação da ONG"
                 >
             </article>

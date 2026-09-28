@@ -602,10 +602,37 @@ select:invalid {
 
 .mensagem-erro {
     display: block;
-    color: #d32f2f;
+    color: #C62828; 
     font-size: 0.9rem;
     margin-top: 4px;
 }
 #app {
     width: 100%;
+}
+/* ====================
+   MODO ALTO CONTRASTE
+   ==================== */
+
+@media (prefers-contrast: more) {
+    :root {
+        --cor-fundo: #FFFFFF;
+        --cor-superficie: #FFFFFF;
+        --cor-texto: #000000;
+        --cor-texto-suave: #000000;
+        --cor-borda: #000000;
+        --cor-primaria: #003300;
+        --cor-primaria-escura: #002200;
+        --cor-foco: #0000FF;
+    }
+
+    a,
+    button {
+        text-decoration: underline;
+    }
+
+    input,
+    select,
+    button {
+        border: 2px solid #000000;
+    }
 }
